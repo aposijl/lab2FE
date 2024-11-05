@@ -201,16 +201,22 @@ a:hover {
   }
 
   .phone {
-    display: block;
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
     font-size: 10px;
     height: 80px;
     margin: 10px 20px 40px;
-    align-content: center;
-  }
+    text-align: center;
+}
 
-  .phone ul {
+.phone ul {
     display: flex;
     gap: 7px;
-    text-align: center;
-  }
+    align-items: center; /* Centers items vertically within the ul */
+    margin: 0;
+    padding: 0;
+    list-style: none; /* Removes default list styling */
+}
+
 }
