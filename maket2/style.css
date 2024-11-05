@@ -10,7 +10,7 @@ body {
     background-color: #FCF8EB;
   }
   
-.container {
+  .container {
     display: grid;
     grid-template-areas:
         "header header header"
@@ -84,14 +84,14 @@ body {
 .cart {
     padding: 20px 23px;
     border: none;
-    background-color: #1F3030;;
+    background-color: #1F3030;
     color: #FEFCF5;
     border-radius: 5px;
     cursor: pointer;
 }
 
 .cart:hover {
-    transform: scale(1.2);
+    transform: scale(1.1);
     transition: 0.1s;
 }
 
@@ -170,4 +170,87 @@ body {
     color:  #FEFCF5;
     border-radius: 5px;
     cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .container {
+        grid-template-areas:
+            "header"
+            "sidebar"
+            "product";
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto 1fr;
+        padding: 10px;
+        gap: 15px;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+        text-align: center;
+    }
+
+    .logo-image {
+        width: 70px;
+    }
+
+    .search-bar {
+        flex-direction: column;
+        width: 90%;
+    }
+
+    .search {
+        padding: 10px;
+    }
+
+    .cart {
+        margin-top: 10px;
+        width: 90%;
+        padding: 15px;
+    }
+
+    .sidebar {
+        border-right: none;
+        padding: 10px 0;
+        border-bottom: 2px solid #1F3030;
+        text-align: center;
+    }
+
+    .sidebar ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        padding: 0;
+    }
+
+    .product-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 15px;
+        margin: 0 auto;
+        padding: 10px;
+    }
+
+    .product-card {
+        width: 100%;
+       width: 370px;
+        margin: 0 auto;
+    }
+
+    .product-image {
+        height: 200px;
+    }
+
+    .product-info p {
+        font-size: 1rem;
+    }
+
+    .product-info button {
+        width: 100%;
+        padding: 10px;
+        font-size: 1rem;
+    }
+
 }
