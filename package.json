@@ -1,0 +1,18 @@
+{
+  "name": "lab2fe",
+  "version": "1.0.0",
+  "description": "проект для макетів з SASS та LESS",
+  "main": "index.html",
+  "scripts": {
+    "build-sass-maket1": "sass maket1/src/sass/style.sass maket1/style.css",
+    "build-sass-maket2": "sass maket2/src/sass/style.sass maket2/style.css",
+    "build-sass-maket3": "sass maket3/src/sass/style.sass maket3/style.css",
+    "build-sass-all": "npm run build-sass-maket1 && npm run build-sass-maket2 && npm run build-sass-maket3",
+    "build-less-maket4": "lessc maket4/src/less/style.less maket4/style.css",
+    "build-less-maket5": "lessc maket5/src/less/style.less maket5/style.css",
+    "build-less-all": "npm run build-less-maket4 && npm run build-less-maket5"
+  },
+  "author": "Badiulko Iryna",
+  "license": "ISC"
+}
+

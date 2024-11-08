@@ -1,21 +1,32 @@
+@font-family: 'Unbounded', sans-serif;
+@primary-color: #C2644F;
+@secondary-color: #1F3030;
+@highlight-color: #31705d97;
+@background-color: #FCF8EB;
+@shadow-color: rgba(70, 189, 152, 0.263);
+@meta-color: #31705de7;
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Unbounded', sans-serif;
+  font-family: @font-family;
 }
+
 body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   margin: 0;
-  background-color: #FCF8EB;
-  color: #1F3030;
+  background-color: @background-color;
+  color: @secondary-color;
   text-align: center;
 }
+
 .header {
   padding: 20px;
 }
+
 .center-container {
   display: flex;
   align-items: center;
@@ -23,175 +34,210 @@ body {
   gap: 20px;
   flex-wrap: wrap;
 }
+
 .featured-image img {
   width: 400px;
   height: auto;
   border-radius: 5px;
 }
+
 .logo {
   text-align: left;
 }
+
 .logo-image {
   width: 100px;
   display: block;
 }
+
 .slogan {
   font-style: italic;
-  color: #31705de7;
+  color: @meta-color;
 }
+
 .main-content {
   flex-grow: 1;
   padding: 20px;
 }
+
 .content {
   overflow: hidden;
   padding-bottom: 20px;
 }
+
 .content-item {
   float: left;
   width: 48%;
   margin: 0 1%;
   padding: 15px;
-  border: 1px solid #31705d97;
+  border: 1px solid @highlight-color;
   border-radius: 5px;
-  box-shadow: 0 4px 8px rgba(70, 189, 152, 0.263);
+  box-shadow: 0 4px 8px @shadow-color;
   text-align: left;
+
+  img {
+    width: 100px;
+    float: left;
+    margin-right: 10px;
+    border-radius: 5px;
+  }
+
+  .content-text {
+    overflow: hidden;
+
+    h2 {
+      margin: 0 0 5px;
+      font-size: 20px;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+  }
 }
-.content-item img {
-  width: 100px;
-  float: left;
-  margin-right: 10px;
-  border-radius: 5px;
-}
-.content-item .content-text {
-  overflow: hidden;
-}
-.content-item .content-text h2 {
-  margin: 0 0 5px;
-  font-size: 20px;
-}
-.content-item .content-text p {
-  font-size: 16px;
-  line-height: 1.6;
-}
+
 .subscribe {
   margin-top: 20px;
   text-align: center;
 }
+
 .email-input {
   padding: 15px;
   width: 350px;
   font-size: 14px;
-  border: 1px solid #31705d97;
+  border: 1px solid @highlight-color;
   border-radius: 5px;
   margin-right: 10px;
 }
+
 .subscribe-btn {
   padding: 15px 25px;
   font-size: 16px;
-  background-color: #31705d97;
+  background-color: @highlight-color;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+
+  &:hover {
+    background-color: #27584f;
+  }
 }
-.subscribe-btn:hover {
-  background-color: #27584f;
-}
+
 .footer {
   padding: 20px;
-  border-top: 1px solid #31705d97;
+  border-top: 1px solid @highlight-color;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  color: #1F3030;
+  color: @secondary-color;
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+
+    li {
+      padding: 5px 0;
+    }
+
+    a {
+      color: @primary-color;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
 }
-.footer ul {
-  list-style-type: none;
-  padding: 0;
-}
-.footer ul li {
-  padding: 5px 0;
-}
-.footer ul a {
-  color: #C2644F;
-  text-decoration: none;
-}
-.footer ul a:hover {
-  text-decoration: underline;
-}
+
 @media (max-width: 768px) {
   .center-container {
     width: 100%;
     text-align: center;
     overflow: hidden;
   }
+
   .featured-image {
     float: none;
     width: 100%;
     margin: 0 auto;
     text-align: center;
+
+    img {
+      width: 100%;
+      max-width: 300px;
+      margin: 0 auto;
+    }
   }
-  .featured-image img {
-    width: 100%;
-    max-width: 300px;
-    margin: 0 auto;
-  }
+
   .logo {
     float: none;
     width: 100%;
     text-align: center;
     margin-top: 20px;
+
+    .logo-image {
+      width: 80px;
+      display: inline-block;
+    }
   }
-  .logo .logo-image {
-    width: 80px;
-    display: inline-block;
-  }
+
   .content-item {
     float: none;
     width: 100%;
     margin: 10px 0;
     text-align: center;
     overflow: hidden;
+
+    img {
+      width: 100%;
+      max-width: 150px;
+      margin: 0 auto 10px;
+      float: none;
+    }
   }
-  .content-item img {
-    width: 100%;
-    max-width: 150px;
-    margin: 0 auto 10px;
-    float: none;
-  }
+
   .content-text {
     overflow: hidden;
     text-align: center;
+
+    h2 {
+      font-size: 20px;
+    }
+
+    p {
+      font-size: 14px;
+    }
   }
-  .content-text h2 {
-    font-size: 20px;
-  }
-  .content-text p {
-    font-size: 14px;
-  }
+
   .subscribe {
     text-align: center;
     overflow: hidden;
   }
+
   .email-input {
     width: 80%;
     margin-right: 0;
     margin-bottom: 10px;
     float: none;
   }
+
   .subscribe-btn {
     width: 80%;
     float: none;
   }
+
   .footer {
     text-align: center;
     overflow: hidden;
-  }
-  .footer ul {
-    float: none;
-    width: 100%;
-    text-align: center;
-    margin: 10px 0;
+
+    ul {
+      float: none;
+      width: 100%;
+      text-align: center;
+      margin: 10px 0;
+    }
   }
 }

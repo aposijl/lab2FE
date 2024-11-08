@@ -1,0 +1,141 @@
+@font-family: 'Unbounded', sans-serif;
+@primary-color: #C2644F;
+@secondary-color: #1F3030;
+@highlight-color: #31705d97;
+@background-color: #FCF8EB;
+@box-shadow: 0 4px 8px rgba(70, 189, 152, 0.263);
+@meta-color: #31705de7;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: @font-family;
+}
+
+body {
+  background-color: @background-color;
+  color: @secondary-color;
+}
+
+.header {
+  text-align: center;
+  padding: 10px;
+  border-bottom: 1px solid @highlight-color;
+}
+
+.logo-image {
+  width: 85px;
+  margin: 8px;
+}
+
+.main-content {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 20px;
+  padding: 20px;
+}
+
+.articles {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.article {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 20px;
+  padding: 20px;
+  border: 1px solid @highlight-color;
+  border-radius: 5px;
+  box-shadow: @box-shadow;
+
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+  }
+
+  .article-content {
+    display: flex;
+    flex-direction: column;
+
+    h2 {
+      margin-bottom: 10px;
+    }
+
+    .meta {
+      font-size: 14px;
+      color: @meta-color;
+      margin-bottom: 10px;
+    }
+
+    p {
+      line-height: 1.5;
+    }
+  }
+}
+
+.sidebar {
+  padding: 20px;
+  border: 1px solid @highlight-color;
+  border-radius: 5px;
+  box-shadow: @box-shadow;
+
+  a {
+    color: @primary-color;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  h2 {
+    margin-bottom: 20px;
+  }
+
+  ul {
+    list-style: none;
+
+    li {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "sidebar"
+      "articles";
+    gap: 15px;
+    padding: 10px;
+  }
+
+  .sidebar {
+    grid-area: sidebar;
+    margin: 10px 0;
+    padding: 15px;
+  }
+
+  .articles {
+    grid-area: articles;
+    gap: 15px;
+  }
+
+  .article {
+    grid-template-columns: 1fr;
+    padding: 15px;
+
+    img {
+      height: 200px;
+    }
+  }
+
+  .logo-image {
+    width: 60px;
+  }
+}

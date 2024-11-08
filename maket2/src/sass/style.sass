@@ -1,0 +1,217 @@
+
+$font-family: 'Unbounded', sans-serif
+$primary-color: #C2644F
+$secondary-color: #1F3030
+$text-color: #FEFCF5
+$background-color: #FCF8EB
+$box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5)
+$product-box-shadow: 0 0px 10px rgba(119, 178, 154, 0.5)
+
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+  font-family: $font-family
+
+body 
+  background-color: $background-color
+
+.container 
+  display: grid
+  grid-template-areas: "header header header" "sidebar product product"
+  grid-template-columns: 200px 1fr 1fr
+  grid-template-rows: auto 1fr
+  gap: 20px
+  padding: 20px
+
+.header 
+  grid-area: header
+  display: flex
+  align-items: center
+  gap: 20px
+  border-bottom: 2px solid $secondary-color
+  padding-bottom: 10px
+
+.logo-image 
+  width: 70px
+  margin: 8px
+
+.search 
+  display: flex
+  align-items: center
+  flex-grow: 1
+  background-color: $secondary-color
+  border-radius: 5px
+  box-shadow: $box-shadow
+  padding: 15px
+
+.search-input 
+  flex-grow: 1
+  padding: 10px
+  font-size: 14px
+  color: $text-color
+  background-color: inherit
+  border: none
+  outline: none
+  border-radius: 5px 
+
+.search-bar 
+  display: flex
+  width: 100%
+
+.search-btn 
+  padding: 15px 23px
+  background-color: $primary-color
+  border: none
+  cursor: pointer
+  border-radius: 5px 
+  transition: 0.1s
+  display: flex
+  align-items: center
+  justify-content: center
+
+  &:hover
+    transform: scale(1.1)
+
+.search-icon 
+  filter: invert(1)
+
+.cart 
+  padding: 20px 23px
+  border: none
+  background-color: $secondary-color
+  color: $text-color
+  border-radius: 5px
+  cursor: pointer
+
+  &:hover
+    transform: scale(1.1)
+    transition: 0.1s
+
+.sidebar 
+  grid-area: sidebar
+  padding: 20px
+  border-right: 2px solid $secondary-color
+  color: $secondary-color
+
+  h2
+    margin-bottom: 10px
+
+  ul
+    list-style-type: none
+
+    li a
+      text-decoration: none
+      display: block
+      padding: 5px 0
+      color: $secondary-color
+
+      &:hover
+        text-decoration: underline
+
+.product-grid 
+  grid-area: product
+  display: grid
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)) 
+  gap: 25px
+  padding: 20px
+  margin-right: 40px
+
+.product-card 
+  background-color: $text-color
+  border-radius: 5px
+  box-shadow: $product-box-shadow
+  display: flex
+  flex-direction: column
+  align-items: center
+  padding: 10px
+
+.product-image 
+  width: 100%
+  height: 150px
+  overflow: hidden 
+  border-radius: 5px 
+
+.tour-image 
+  width: 100%
+  height: 100%
+  object-fit: cover 
+  border-radius: 5px
+
+.product-info 
+  text-align: center
+
+  p
+    margin: 5px 0
+
+  button
+    padding: 5px 10px
+    border: none
+    background-color: $primary-color
+    color: $text-color
+    border-radius: 5px
+    cursor: pointer
+
+@media (max-width: 768px)
+  .container 
+    grid-template-areas: "header" "sidebar" "product"
+    grid-template-columns: 1fr
+    grid-template-rows: auto auto 1fr
+    padding: 10px
+    gap: 15px
+
+  .header 
+    flex-direction: column
+    align-items: center
+    gap: 5px
+    text-align: center
+
+  .logo-image 
+    width: 70px
+
+  .search-bar 
+    flex-direction: column
+    width: 90%
+
+  .search 
+    padding: 10px
+
+  .cart 
+    margin-top: 10px
+    width: 90%
+    padding: 15px
+
+  .sidebar 
+    border-right: none
+    padding: 10px 0
+    border-bottom: 2px solid $secondary-color
+    text-align: center
+
+    ul 
+      display: flex
+      flex-direction: column
+      align-items: center
+      gap: 10px
+      padding: 0
+
+  .product-grid 
+    display: grid
+    grid-template-columns: 1fr
+    gap: 15px
+    margin: 0 auto
+    padding: 10px
+
+  .product-card 
+    width: 100%
+    max-width: 370px
+    margin: 0 auto
+
+  .product-image 
+    height: 200px
+
+  .product-info p 
+    font-size: 1rem
+
+  .product-info button 
+    width: 100%
+    padding: 10px
+    font-size: 1rem
